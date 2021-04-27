@@ -1,19 +1,19 @@
 package com.pondox.growtower;
 
-import android.widget.ImageView;
-
 public class Character {
     public int health;
-    private int x,y;
+    public int x,y;
+    protected boolean dead;
+    int width = 200, height = 200;
 
-    public Character(int health) {
+    public Character(int health,int x,int y) {
         this.health = health;
         this.x = x;
         this.y = y;
     }
 
-    public int getHealth() {
-        return health;
+    public String getHealth() {
+        return String.valueOf(health);
     }
 
     public void setHealth(int health) {

@@ -9,9 +9,9 @@ import static com.pondox.growtower.GameView.screenRatioY;
 
 public class Hero extends Character{
     Bitmap hero;
-    int x,y,width,height;
-    public Hero(int health, Resources res) {
-        super(health);
+    int width,height;
+    public Hero(int health, Resources res,int x,int y) {
+        super(health,x,y);
         System.out.println("Hero runs");
         hero = BitmapFactory.decodeResource(res, R.drawable.hero);
 
@@ -25,6 +25,18 @@ public class Hero extends Character{
     Bitmap getHero(){
 
         return hero;
+    }
+
+    void fight(Character enemy){
+        if(health>=enemy.health&&enemy.dead==false){
+            this.health += enemy.health;
+            this.x = enemy.x;
+            this.y = enemy.y;
+            enemy.dead = true;
+        }
+        else if(health<enemy.health){
+            dead = true;
+        }
     }
 
 }

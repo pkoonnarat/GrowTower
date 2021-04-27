@@ -3,12 +3,13 @@ package com.pondox.growtower;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class Enemy extends Character{
     Bitmap enemy;
-    int x,y,width,height;
-    public Enemy(Resources res) {
-        super((int)(Math.random()*20));
+    int width,height;
+    public Enemy(Resources res,int x,int y) {
+        super((int)(Math.random()*10)+1,x,y);
 
         enemy = BitmapFactory.decodeResource(res, R.drawable.enemy);
 
