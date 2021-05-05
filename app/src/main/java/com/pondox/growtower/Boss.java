@@ -5,12 +5,12 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 
 public class Boss extends Character {
-    Bitmap Boss;
+    Bitmap boss;
     int width,height;
     public Boss(Resources res, int x, int y) {
-        super((int)(Math.random()*100)+1,x,y);
+        super((int)(Math.random()*30)+60,x,y);
 
-        boss = BitmapFactory.decodeResource(res, R.drawable.bossA);
+        boss = BitmapFactory.decodeResource(res, R.drawable.boss);
 
         width = 200;
         height = 200;
